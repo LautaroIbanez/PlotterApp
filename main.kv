@@ -1,0 +1,24 @@
+#:kivy 2.0.0
+
+<LoadDialog>:
+    orientation: 'vertical'
+
+<Plotter>:
+    orientation: 'vertical'
+    BoxLayout:
+        size_hint: 1, 0.1
+        Button:
+            text: 'Load CSV'
+            on_press: root.show_load_dialog(self)
+    BoxLayout:
+        size_hint: 1, 0.1
+        Button:
+            text: 'Plot CSV'
+            on_press: root.load_csv(self)
+    Image:
+        id: plot_area
+        size_hint: 1, 0.7
+    Label:
+        id: info_label
+        size_hint: 1, 0.1
+        text: "Select a CSV file to plot"
